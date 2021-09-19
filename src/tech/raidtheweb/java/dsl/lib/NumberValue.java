@@ -1,0 +1,37 @@
+package tech.raidtheweb.java.dsl.lib;
+
+public final class NumberValue implements Value {
+	private final double value;
+	
+	public NumberValue(boolean value) {
+		this.value = value ? 1 : 0;
+	}
+	
+	public NumberValue(double value) {
+		this.value = value;
+	}
+	
+	public NumberValue(int value) {
+		this.value = value;
+	}
+	
+	@Override
+	public int asInt() {
+		return (int) value;
+	}
+	
+	@Override
+	public double asDouble() {
+		return value;
+	}
+
+	@Override
+	public String asString() {
+		return Double.toString(value);
+	}
+
+	@Override
+	public String toString() {
+		return asString();
+	}
+}
